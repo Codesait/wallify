@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:wallify/intro/intro.dart';
+import 'package:wallify/screens/intro.dart';
 import 'package:wallify/utils/constants.dart';
 
 class Splash extends StatefulWidget {

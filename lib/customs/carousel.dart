@@ -84,7 +84,7 @@ class _CarouselState extends State<Carousel> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 45.0, bottom: 20),
+          padding: const EdgeInsets.only(top: 58.0, bottom: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: _buildPageIndicator(),

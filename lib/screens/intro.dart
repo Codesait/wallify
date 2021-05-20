@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wallify/customs/button.dart';
-import 'package:wallify/intro/carousel.dart';
+import 'package:wallify/customs/carousel.dart';
 import 'package:wallify/utils/constants.dart';
 
 class Intro extends StatefulWidget {

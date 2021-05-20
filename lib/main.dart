@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wallify/intro/splash.dart';
+import 'package:wallify/screens/splash.dart';
 
 void main() {
   runApp(MyApp());
