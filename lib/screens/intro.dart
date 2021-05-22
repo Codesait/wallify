@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wallify/customs/button.dart';
 import 'package:wallify/customs/carousel.dart';
+import 'package:wallify/screens/signup.dart';
 import 'package:wallify/utils/constants.dart';
 
 class Intro extends StatefulWidget {
@@ -32,7 +33,7 @@ class _IntroState extends State<Intro> {
                     child: Center(
                       child: Button(
                         colors: _utilClass.primaryColor,
-                        onclick: (){},
+                        onclick: ()=>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignUp())),
                         height: 50,
                         width: 150,
                         child: Text('Get Started'),
