@@ -11,7 +11,9 @@ class PasswordField extends StatefulWidget {
     this.validator,
     this.onFieldSubmitted,
     this.controller,
-    this.inputType
+    this.inputType,
+    this.focusNode,
+    this.padding
   });
 
   final Key fieldKey;
@@ -24,6 +26,8 @@ class PasswordField extends StatefulWidget {
   final ValueChanged<String> onFieldSubmitted;
   final TextEditingController controller;
   final TextInputType inputType;
+  final FocusNode focusNode;
+  final EdgeInsets padding;
 
 
   @override
@@ -35,35 +39,52 @@ class _PasswordFieldState extends State<PasswordField> {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-        controller: widget.controller,
-        key: widget.fieldKey,
-        obscureText: _obscureText,
-        // maxLength: widget.maxLength ?? 9, // if not provided by the user, then it is 8
-        onSaved: widget.onSaved,
-        validator: widget.validator,
-        keyboardType: widget.inputType,
-        onFieldSubmitted: widget.onFieldSubmitted,
-        decoration: InputDecoration(
-          border: const UnderlineInputBorder(),
-          filled: true,
-          fillColor: Colors.transparent,
-          hintText: widget.hintText,
-          labelText: widget.labelText,
-          helperText: widget.helperText,
-          hintStyle: TextStyle(color: Colors.grey),
-          suffixIcon: GestureDetector(
-            onTap: () {
-              setState(() {
-                _obscureText = !_obscureText;
-              });
-            },
-            child: Icon(_obscureText ? Icons.visibility_off : Icons.visibility,color: Colors.black45,),
-          ),
-          prefixIcon: Icon(
-            Icons.lock_open,
-          ),
-        ));
+    return Container(
+      padding: widget.padding,
+      child: TextFormField(
+          controller: widget.controller,
+          key: widget.fieldKey,
+          obscureText: _obscureText,
+          // maxLength: widget.maxLength ?? 9, // if not provided by the user, then it is 8
+          onSaved: widget.onSaved,
+          validator: widget.validator,
+          keyboardType: widget.inputType,
+          onFieldSubmitted: widget.onFieldSubmitted,
+          focusNode: widget.focusNode,
+          decoration: InputDecoration(
+            border: const UnderlineInputBorder(),
+            filled: true,
+            fillColor: Colors.transparent,
+            hintText: widget.hintText,
+            labelText: widget.labelText,
+            helperText: widget.helperText,
+            labelStyle: TextStyle(color: Colors.white),
+            hintStyle: TextStyle(color: Colors.white),
+            enabledBorder: UnderlineInputBorder(
+              borderRadius: BorderRadius.circular(5),
+              borderSide: BorderSide(
+                color: Colors.white,
+                width: 1.0,
+              ),
+            ),
+            focusedBorder: UnderlineInputBorder(
+              borderRadius: BorderRadius.circular(30),
+              borderSide: BorderSide(
+                color: Colors.white,
+                width: 2.0,
+              ),
+            ),
+            suffixIcon: GestureDetector(
+              onTap: () {
+                setState(() {
+                  _obscureText = !_obscureText;
+                });
+              },
+              child: Icon(_obscureText ? Icons.visibility_off : Icons.visibility,color: Colors.white,),
+            ),
+
+          )),
+    );
   }
 }
 
