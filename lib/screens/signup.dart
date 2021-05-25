@@ -56,20 +56,14 @@ class _SignUpState extends State<SignUp> {
                   _email(context: context),
                   _password(context: context),
                   _phoneField(context: context),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Button(
+                   Button(
                       height: 50,
                       width: 200,
                       child: Text('Continue'),
                       colors: Colors.black,
-                      onclick: (){
-
-                      },
+                      onclick: (){},
                     ),
-                  )
-
-
+                  _loginLabel(context)
                 ],
               ),
             ),
@@ -116,7 +110,7 @@ class _SignUpState extends State<SignUp> {
       padding: const EdgeInsets.all(10),
       labelText: "Enter Phone Number",
       controller: _phoneController,
-      onFieldSubmitted: (_)=> FocusScope.of(context).requestFocus(_focusNodePassword),
+      onFieldSubmitted: (_)=> FocusScope.of(context).unfocus(),
       focusNode: _focusNodePhone,
 
     );
@@ -145,6 +139,33 @@ class _SignUpState extends State<SignUp> {
             height: 100,
               width: fullWidth(context)/1.7,
               child: _phone(context: context)),
+        ],
+      ),
+    );
+  }
+
+  Widget _loginLabel(context) {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 20),
+      alignment: Alignment.bottomCenter,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text(
+            "Already have an account ? ",
+            style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600,color: Colors.white),
+          ),
+
+          InkWell(
+            onTap: (){},
+            child: Text(
+              'Login',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 13,
+                  fontWeight: FontWeight.bold),
+            ),
+          )
         ],
       ),
     );

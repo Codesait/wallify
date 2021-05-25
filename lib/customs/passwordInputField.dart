@@ -51,6 +51,7 @@ class _PasswordFieldState extends State<PasswordField> {
           keyboardType: widget.inputType,
           onFieldSubmitted: widget.onFieldSubmitted,
           focusNode: widget.focusNode,
+          cursorColor: Colors.white,
           decoration: InputDecoration(
             border: const UnderlineInputBorder(),
             filled: true,
