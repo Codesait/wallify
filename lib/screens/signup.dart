@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:wallify/customs/button.dart';
 import 'package:wallify/customs/inputField.dart';
 import 'package:wallify/customs/passwordInputField.dart';
+import 'package:wallify/screens/verification.dart';
 import 'package:wallify/utils/constants.dart';
 class SignUp extends StatefulWidget {
   const SignUp({Key key}) : super(key: key);
@@ -40,6 +41,7 @@ class _SignUpState extends State<SignUp> {
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(10.0),
           child: Container(
+            padding: const EdgeInsets.all(12),
             width: fullWidth(context),
             height: fullHeigth(context),
             child: Form(
@@ -58,10 +60,10 @@ class _SignUpState extends State<SignUp> {
                   _phoneField(context: context),
                    Button(
                       height: 50,
-                      width: 200,
+                      width: fullWidth(context),
                       child: Text('Continue'),
                       colors: Colors.black,
-                      onclick: (){},
+                      onclick: ()=>Navigator.push(context, MaterialPageRoute(builder: (context) => PhoneVerificaton())),
                     ),
                   _loginLabel(context)
                 ],
@@ -124,7 +126,7 @@ class _SignUpState extends State<SignUp> {
         children:[
           SizedBox(
             height: 60,
-            width: fullWidth(context)/3,
+            width: 100,
             child: CountryCodePicker(
               onChanged: print,
               initialSelection: 'IT',
@@ -137,7 +139,7 @@ class _SignUpState extends State<SignUp> {
           ),
           SizedBox(
             height: 100,
-              width: fullWidth(context)/1.7,
+              width: fullWidth(context)/1.6,
               child: _phone(context: context)),
         ],
       ),

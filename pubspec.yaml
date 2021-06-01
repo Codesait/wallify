@@ -30,11 +30,17 @@ dependencies:
   cupertino_icons: ^1.0.2
   cached_network_image: ^3.0.0
   country_code_picker: ^2.0.1
+  pin_code_fields: ^7.1.0
+  pinput: ^1.2.0
+
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+dependency_overrides:
+  numeric_keyboard: ^1.1.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
