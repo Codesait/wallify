@@ -63,7 +63,7 @@ class _SignUpState extends State<SignUp> {
                       width: fullWidth(context),
                       child: Text('Continue'),
                       colors: Colors.black,
-                      onclick: ()=>Navigator.push(context, MaterialPageRoute(builder: (context) => PhoneVerificaton())),
+                      onclick: ()=>Navigator.push(context, MaterialPageRoute(builder: (context) => PhoneVerification())),
                     ),
                   _loginLabel(context)
                 ],
