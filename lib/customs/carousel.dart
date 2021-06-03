@@ -53,7 +53,7 @@ class _CarouselState extends State<Carousel> {
                             imageUrl: images[index],
                             fit: BoxFit.contain,
                             placeholder: (context, url) =>
-                                Image.asset("placeholder".png),
+                                Container(height: 150,),
                             errorWidget: (context, url, error) =>
                                 Icon(Icons.error),
                           ),

@@ -33,7 +33,8 @@ class _IntroState extends State<Intro> {
                     child: Center(
                       child: Button(
                         colors: _utilClass.primaryColor,
-                        onclick: ()=>Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignUp())),
+                        onclick: () => Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (context) => SignUp())),
                         height: 50,
                         width: 150,
                         child: Text('Get Started'),

@@ -21,13 +21,14 @@ class _SplashState extends State<Splash> {
   }
 
   // navigate after time elapse
-  void startTimer(){
+  void startTimer() {
     Timer(Duration(seconds: 4), navigate);
   }
 
   // navigate to a new page
-  void navigate(){
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Intro()));
+  void navigate() {
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => Intro()));
   }
 
   @override
