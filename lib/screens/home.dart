@@ -138,6 +138,7 @@ class HomeScreen extends StatelessWidget {
   Widget _featureWidget({String title, String imageIcon, int color, String routName}){
     return InkWell(
       onTap: (){},
+      borderRadius: BorderRadius.circular(16),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
