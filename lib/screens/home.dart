@@ -117,8 +117,8 @@ class HomeScreen extends StatelessWidget {
           GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 4,
-              childAspectRatio: 4 / 5,
-              crossAxisSpacing: 20,
+              childAspectRatio: 5 / 7,
+              crossAxisSpacing: 25,
               mainAxisSpacing: 25),
               shrinkWrap: true,
               itemCount: _utilClass.featureData.length,
@@ -145,6 +145,7 @@ class HomeScreen extends StatelessWidget {
             height: 55,
             width: 55,
             padding: const EdgeInsets.all(15.0),
+            margin: const EdgeInsets.only(bottom: 5),
             decoration: BoxDecoration(
               color: Color(color).withOpacity(0.1),
               borderRadius: BorderRadius.circular(16)
@@ -152,7 +153,7 @@ class HomeScreen extends StatelessWidget {
             child: Image.asset(imageIcon + '.png',height: 20,width: 20,),
           ),
 
-          Text(title)
+          Text(title,textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.w500),)
         ],
       ),
     );

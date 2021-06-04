@@ -46,7 +46,7 @@ class _MainPageState extends State<MainPage> {
   Widget _bottomNavigation(){
     return Container(
       padding: EdgeInsets.only(top: 2.0),
-      height: 70,
+      height: 75,
       decoration: BoxDecoration(color: Colors.white,),
       width: fullWidth(context),
       child: Row(
