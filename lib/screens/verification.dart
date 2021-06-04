@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:numeric_keyboard/numeric_keyboard.dart';
 import 'package:pinput/pin_put/pin_put.dart';
 import 'package:wallify/screens/home.dart';
+import 'package:wallify/screens/mainPage.dart';
 import 'package:wallify/utils/constants.dart';
 
 class PhoneVerification extends StatefulWidget {
@@ -129,7 +130,7 @@ class _PhoneVerificationState extends State<PhoneVerification> {
             fontSize: 25.0, color: Colors.black, fontWeight: FontWeight.bold),
         eachFieldWidth: 55.0,
         eachFieldHeight: 55.0,
-        onSubmit: (String pin) => Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=> HomeScreen()) ),
+        onSubmit: (String pin) => Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=> MainPage()) ),
         focusNode: inputFocusNode,
         controller: inputController,
         submittedFieldDecoration: pinPutDecoration,
