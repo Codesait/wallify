@@ -15,7 +15,7 @@ class UtilClass {
       fontWeight: FontWeight.bold,
       fontSize: 45);
 
-  List<Map> featureData =[
+ final List<Map> featureData =[
     {
       "title": "Top Up",
       "icon": "assets/images/top_up",
@@ -53,7 +53,7 @@ class UtilClass {
       "route": "/topUp"
     },
     {
-      "title": "Mobile Prepaid",
+      "title": "Mobile",
       "icon": "assets/images/smartphone",
       "backgroundColor": 0xFFf03743,
       "route": "/topUp"
@@ -65,6 +65,16 @@ class UtilClass {
       "route": "/topUp"
     },
   ];
+
+ List<Map> promos = [
+   {
+     "thumbnail":"",
+     "title": "Share and Earn",
+     "description":"",
+     "route": "/share"
+
+   }
+ ];
 
 
 }
