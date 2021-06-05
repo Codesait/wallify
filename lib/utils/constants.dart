@@ -68,11 +68,16 @@ class UtilClass {
 
  List<Map> promos = [
    {
-     "thumbnail":"",
+     "thumbnail":"share",
      "title": "Share and Earn",
-     "description":"",
+     "description": r"Invite your friends and family to earn $2",
      "route": "/share"
-
+   },
+   {
+     "thumbnail":"share",
+     "title": "Share and Earn",
+     "description":r"Invite your friends and earn $100",
+     "route": "/share"
    }
  ];
 

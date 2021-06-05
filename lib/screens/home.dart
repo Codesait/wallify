@@ -17,13 +17,15 @@ class HomeScreen extends StatelessWidget {
         height: fullHeigth(context),
         width: fullWidth(context),
         child: SafeArea(
-          child: Column(
-            children: [
-              customAppBar(context),
-              banner(context),
-              features(context),
-              promo(context)
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                customAppBar(context),
+                banner(context),
+                features(context),
+                promo(context)
+              ],
+            ),
           ),
         ),
       ),

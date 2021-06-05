@@ -96,6 +96,7 @@ Widget features(BuildContext context){
                 childAspectRatio: 5 / 7,
                 crossAxisSpacing: 25,
                 mainAxisSpacing: 25),
+
             shrinkWrap: true,
             itemCount: _utilClass.featureData.length,
             itemBuilder: (BuildContext context, index){
@@ -158,8 +159,48 @@ Widget promo(BuildContext context){
         ),
         SizedBox(height: 20,),
         Row(
-          children: _utilClass.featureData.map((e) => Text(e['title'])).toList(),
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: _utilClass.promos.map((e) => promoWidget(
+            context,
+            title: e["title"],
+            thumbnail: e["thumbnail"],
+            description: e["description"]
+          )).toList(),
         )
+      ],
+    ),
+  );
+}
+
+
+Widget promoWidget(BuildContext context,{String thumbnail, String title, String description} ){
+  return Container(
+    padding: const EdgeInsets.only(),
+    height: 170,
+    width: fullWidth(context)/2.3,
+    child: Column(
+      children: [
+        Expanded(
+          flex: 2,
+            child: Image.asset(thumbnail.jpeg,fit: BoxFit.fill, width: fullWidth(context)/2.3),
+        ),
+        Expanded(
+          flex: 1,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              SizedBox(width: 15),
+              SizedBox(
+                width: 140,
+                  child: Text(description))
+            ],
+          ),
+        )
+        
       ],
     ),
   );
