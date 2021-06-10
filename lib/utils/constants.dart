@@ -97,7 +97,7 @@ class UtilClass {
    },
    {
      "thumbnail":"netflix",
-     "title": "Share and Earn",
+     "title": "Netflix",
      "price": r"$ 58.00",
      "date": "10 Feb, 2021"
    },

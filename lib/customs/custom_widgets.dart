@@ -358,7 +358,8 @@ Widget history(BuildContext context){
 
 Widget historyTile({String date, String thumbnail, String title, String price}){
   return ListTile(
-    leading: Text(date,style: TextStyle(color: _utilClass.primaryColor,fontSize: 15)),
+    onTap: (){},
+    leading: Text(date,style: TextStyle(color: _utilClass.primaryColor,fontSize: 15,fontWeight: FontWeight.bold)),
     title: Row(
       children: [
         SizedBox(width: 10),
@@ -371,7 +372,7 @@ Widget historyTile({String date, String thumbnail, String title, String price}){
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(title),
+            Text(title,style: TextStyle(fontSize: 14),),
             Text(price,style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold
