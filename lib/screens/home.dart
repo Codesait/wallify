@@ -1,8 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:wallify/customs/custom_widgets.dart';
 import 'package:wallify/utils/constants.dart';
-import 'package:wallify/utils/extensions.dart';
 
 class HomeScreen extends StatelessWidget {
 
@@ -31,5 +29,4 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-
 }

@@ -77,7 +77,7 @@ Widget banner(BuildContext context){
   );
 }
 
-//features
+//features widgets
 Widget features(BuildContext context){
   return Container(
     padding: const EdgeInsets.only(top: 25),
@@ -98,6 +98,7 @@ Widget features(BuildContext context){
                 mainAxisSpacing: 25),
 
             shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
             itemCount: _utilClass.featureData.length,
             itemBuilder: (BuildContext context, index){
               return _featureWidget(
@@ -136,6 +137,8 @@ Widget _featureWidget({String title, String imageIcon, int color, String routNam
   );
 }
 
+//
+// promo widgets
 Widget promo(BuildContext context){
   return Container(
     padding: const EdgeInsets.only(top: 25),
@@ -171,8 +174,6 @@ Widget promo(BuildContext context){
     ),
   );
 }
-
-
 Widget promoWidget(BuildContext context,{String thumbnail, String title, String description} ){
   return Container(
     padding: const EdgeInsets.only(),
@@ -205,5 +206,184 @@ Widget promoWidget(BuildContext context,{String thumbnail, String title, String 
     ),
   );
 }
+
 //
-//
+// profile page widgets
+Widget profileBanner(BuildContext context,{String dropDownHint, Function onDropDownChange,String item})
+{
+
+  return Container(
+    alignment: Alignment.centerLeft,
+    margin: const EdgeInsets.all(20),
+    padding: const EdgeInsets.all(28),
+    height: 130,
+    width: fullWidth(context),
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(23.0)),
+        color: Colors.grey[100],
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text(
+          'Balance',
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 19.0
+          ),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                RichText(
+                  maxLines: 2,
+                  text: TextSpan(children: <TextSpan>[
+                    TextSpan(
+                        text: r'$ ',
+                        style: TextStyle(
+                            fontSize: 25,
+                            color: Colors.black,
+                            fontWeight: FontWeight.normal)),
+                    TextSpan(
+                        text: '150.00',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 29
+                        )),
+                  ]),
+                ),
+                IconButton(
+                    icon: Icon(Icons.visibility_rounded),
+                    color: Colors.grey,
+                    onPressed: (){print('visible');})
+              ],
+            ),
+            Container(
+              height: 35,
+              width: 75,
+              padding: const EdgeInsets.all(7),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: _utilClass.purple
+              ),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton<String>(
+                  isExpanded: true,
+                  value: item,
+                  icon: Icon(
+                    Icons.keyboard_arrow_down,
+                    color: Colors.white,
+                  ),
+                  style: TextStyle(
+                    color: Colors.white
+                  ),
+                  hint: Text(
+                    dropDownHint,
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  items: <String>[
+                    'USD',
+                    'NGN',
+                  ].map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value,style:TextStyle(color:Colors.white,fontWeight: FontWeight.bold),),
+                    );
+                  }).toList(),
+                  dropdownColor: Colors.deepPurple,
+                  onChanged: onDropDownChange,
+                ),
+              ),
+            )
+          ],
+        ),
+      ],
+    ),
+  );
+}
+
+Widget history(BuildContext context){
+  return Container(
+    width: fullWidth(context),
+    padding: const EdgeInsets.all(20),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'Transactions',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16
+              ),
+            ),
+            InkWell(
+              borderRadius: BorderRadius.circular(2),
+              onTap: (){},
+                child: Text(
+                  'View all',
+                  style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500),
+                )),
+          ],
+        ),
+        Container(
+          width: fullWidth(context),
+          height: 350,
+          child: ListView(
+            children: _utilClass.dummyTransactions.map((e) =>
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 15),
+                  child: historyTile(
+                      date: e['date'],
+                      title: e['title'],
+                      price: e['price'],
+                      thumbnail: e['thumbnail']
+                  ),
+                )
+            ).toList(),
+          ),
+        )
+      ],
+    ),
+  );
+}
+
+Widget historyTile({String date, String thumbnail, String title, String price}){
+  return ListTile(
+    leading: Text(date,style: TextStyle(color: _utilClass.primaryColor,fontSize: 15)),
+    title: Row(
+      children: [
+        SizedBox(width: 10),
+        Image.asset(
+          thumbnail.png,
+          height: 25,
+          width: 25,
+        ),
+        SizedBox(width: 10),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(title),
+            Text(price,style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold
+            ),)
+
+          ],
+        )
+
+      ],
+    ),
+    trailing: Icon(Icons.keyboard_arrow_right),
+  );
+}
+
+

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:numeric_keyboard/numeric_keyboard.dart';
 import 'package:pinput/pin_put/pin_put.dart';
-import 'package:wallify/screens/home.dart';
 import 'package:wallify/screens/mainPage.dart';
 import 'package:wallify/utils/constants.dart';
 
@@ -125,6 +124,7 @@ class _PhoneVerificationState extends State<PhoneVerification> {
       child: PinPut(
         fieldsCount: 4,
         withCursor: true,
+        obscureText: '*',
         useNativeKeyboard: false,
         textStyle: const TextStyle(
             fontSize: 25.0, color: Colors.black, fontWeight: FontWeight.bold),

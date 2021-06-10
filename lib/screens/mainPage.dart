@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:wallify/model/bottom_navigation.dart';
 import 'package:wallify/screens/home.dart';
+import 'package:wallify/screens/profile.dart';
 import 'package:wallify/utils/constants.dart';
 
 class MainPage extends StatefulWidget {
@@ -37,7 +38,7 @@ class _MainPageState extends State<MainPage> {
       case 1 :
         return Container();
       case 2:
-        return Container();
+        return Profile(title: "Account",);
     }
     return getCurrentPage();
   }

@@ -9,6 +9,7 @@ fullHeigth(BuildContext context) {
 }
 class UtilClass {
   Color primaryColor = Colors.green;
+  Color purple = Colors.deepPurpleAccent;
 
   TextStyle boldLogoText = TextStyle(
       color: Colors.white,
@@ -79,6 +80,40 @@ class UtilClass {
      "description":r"Invite your friends and earn $100",
      "route": "/share"
    }
+ ];
+
+ List<Map> dummyTransactions = [
+   {
+     "thumbnail":"netflix",
+     "title": "Share and Earn",
+     "price": r"$ 58.00",
+     "date": "10 Feb, 2021"
+   },
+   {
+     "thumbnail":"netflix",
+     "title": "Share and Earn",
+     "price": r"$ 58.00",
+     "date": "10 Feb, 2021"
+   },
+   {
+     "thumbnail":"netflix",
+     "title": "Share and Earn",
+     "price": r"$ 58.00",
+     "date": "10 Feb, 2021"
+   },
+   {
+     "thumbnail":"netflix",
+     "title": "Share and Earn",
+     "price": r"$ 58.00",
+     "date": "10 Feb, 2021"
+   },
+   {
+     "thumbnail":"netflix",
+     "title": "Share and Earn",
+     "price": r"$ 58.00",
+     "date": "10 Feb, 2021"
+   },
+
  ];
 
 
