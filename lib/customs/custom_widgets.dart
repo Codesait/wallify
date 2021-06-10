@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:wallify/utils/constants.dart';
 import 'package:wallify/utils/extensions.dart';
 
+import 'button.dart';
+
 final UtilClass _utilClass = UtilClass();
 
 //
@@ -209,14 +211,12 @@ Widget promoWidget(BuildContext context,{String thumbnail, String title, String 
 
 //
 // profile page widgets
-Widget profileBanner(BuildContext context,{String dropDownHint, Function onDropDownChange,String item})
-{
-
+Widget profileBanner(BuildContext context,{String dropDownHint, Function onDropDownChange,String item}) {
   return Container(
     alignment: Alignment.centerLeft,
     margin: const EdgeInsets.all(20),
-    padding: const EdgeInsets.all(28),
-    height: 130,
+    padding: const EdgeInsets.all(22),
+    height: 120,
     width: fullWidth(context),
     decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(23.0)),
@@ -310,7 +310,6 @@ Widget history(BuildContext context){
     width: fullWidth(context),
     padding: const EdgeInsets.all(20),
     child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -350,7 +349,8 @@ Widget history(BuildContext context){
                 )
             ).toList(),
           ),
-        )
+        ),
+        topUpBtn(context)
       ],
     ),
   );
@@ -383,6 +383,24 @@ Widget historyTile({String date, String thumbnail, String title, String price}){
       ],
     ),
     trailing: Icon(Icons.keyboard_arrow_right),
+  );
+}
+
+Widget topUpBtn(BuildContext context){
+  return  Container(
+    height: 48,
+    width: fullWidth(context),
+    child: InkWell(
+      onTap: (){},
+      child: Center(child: Text('Top Up',
+        style: TextStyle(color: _utilClass.primaryColor,fontWeight: FontWeight.bold,fontSize: 18)
+      )),
+    ),
+    decoration: BoxDecoration(
+      color: _utilClass.primaryColor.withOpacity(0.1),
+      borderRadius: BorderRadius.circular(10)
+    ),
+    
   );
 }
 

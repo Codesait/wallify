@@ -27,7 +27,7 @@ class _ProfileState extends State<Profile> {
               child: CustomAppBar(title: widget.title,),
             ),
             Expanded(
-              flex: 8,
+              flex: 9,
                 child: Column(
                   children: [
                     profileBanner(
@@ -41,7 +41,6 @@ class _ProfileState extends State<Profile> {
                         });
                       }
                     ),
-
                     history(context)
 
 
