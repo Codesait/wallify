@@ -262,9 +262,9 @@ Widget profileBanner(BuildContext context,{String dropDownHint, Function onDropD
               ],
             ),
             Container(
-              height: 35,
-              width: 75,
-              padding: const EdgeInsets.all(7),
+              height: 32,
+              width: 74,
+              padding: const EdgeInsets.all(6),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 color: _utilClass.purple
