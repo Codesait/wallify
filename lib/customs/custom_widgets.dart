@@ -211,7 +211,7 @@ Widget promoWidget(BuildContext context,{String thumbnail, String title, String 
 
 //
 // profile page widgets
-Widget profileBanner(BuildContext context,{String dropDownHint, Function onDropDownChange,String item}) {
+Widget profileBanner(BuildContext context,{Function isPriceVisible, bool isVisible,String dropDownHint, Function onDropDownChange,String item}) {
   return Container(
     alignment: Alignment.centerLeft,
     margin: const EdgeInsets.all(20),
@@ -256,9 +256,10 @@ Widget profileBanner(BuildContext context,{String dropDownHint, Function onDropD
                   ]),
                 ),
                 IconButton(
-                    icon: Icon(Icons.visibility_rounded),
+                    icon: Icon(isVisible ? Icons.visibility_rounded : Icons.visibility_off_rounded),
                     color: Colors.grey,
-                    onPressed: (){print('visible');})
+                    onPressed: isPriceVisible,
+                )
               ],
             ),
             Container(

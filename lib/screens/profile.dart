@@ -13,6 +13,7 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
   String _onValueChange;
+  bool _isPriceVisible = true;
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +35,12 @@ class _ProfileState extends State<Profile> {
                       context,
                       dropDownHint: 'USD',
                       item: _onValueChange,
+                      isVisible: _isPriceVisible,
+                      isPriceVisible: (){
+                        setState(() {
+                          _isPriceVisible == true ? _isPriceVisible = false : _isPriceVisible = true;
+                        });
+                      },
                       onDropDownChange: (v){
                         setState(() {
                           _onValueChange = v;
@@ -42,8 +49,6 @@ class _ProfileState extends State<Profile> {
                       }
                     ),
                     history(context)
-
-
                   ],
                 )
             )
