@@ -247,7 +247,7 @@ Widget profileBanner(BuildContext context,{Function isPriceVisible, bool isVisib
                             color: Colors.black,
                             fontWeight: FontWeight.normal)),
                     TextSpan(
-                        text: '150.00',
+                        text: isVisible ? '150.00' : '*** **',
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
