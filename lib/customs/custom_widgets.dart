@@ -407,4 +407,39 @@ Widget topUpBtn(BuildContext context){
   );
 }
 
+//
+/// top up widgets
+
+Widget topUpAppBar(){
+  return Expanded(
+      flex: 1,
+      child: Container(
+        color: Colors.white,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            CircleAvatar(
+              radius: 24,
+              backgroundColor: Colors.grey,
+              child: CircleAvatar(
+                radius: 23,
+                backgroundColor: Colors.grey[200],
+                child: IconButton(
+                  onPressed: (){print('close');},
+                  icon: Icon(
+                    Icons.clear,
+                  ),
+                  iconSize: 25,
+                  color: Colors.black,
+                ),
+
+              ),
+            ),
+            Container(),
+            SizedBox()
+          ],
+        ),
+      ));
+}
+
 

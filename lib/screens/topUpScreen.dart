@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wallify/customs/custom_widgets.dart';
 class TopUp extends StatefulWidget {
   const TopUp({Key key}) : super(key: key);
 
@@ -10,7 +11,24 @@ class _TopUpState extends State<TopUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(),
+      body: SafeArea(
+        child: Column(
+          children: [
+            topUpAppBar(),
+            Expanded(flex: 2,
+              child: Container(
+                color: Colors.black,
+
+              )),
+            Expanded(
+              flex: 5,
+                child: Container(
+                  color: Colors.grey,
+
+                ))
+          ],
+        ),
+      ),
     );
   }
 }
