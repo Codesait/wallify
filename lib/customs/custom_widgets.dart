@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wallify/screens/topUpScreen.dart';
 import 'package:wallify/utils/constants.dart';
 import 'package:wallify/utils/extensions.dart';
 
@@ -393,7 +394,7 @@ Widget topUpBtn(BuildContext context){
     height: 48,
     width: fullWidth(context),
     child: InkWell(
-      onTap: (){},
+      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => TopUp())),
       child: Center(child: Text('Top Up',
         style: TextStyle(color: _utilClass.primaryColor,fontWeight: FontWeight.bold,fontSize: 18)
       )),
