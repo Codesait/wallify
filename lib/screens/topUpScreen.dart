@@ -33,10 +33,10 @@ class _TopUpState extends State<TopUp> {
                       topUpKeyPad(),
                       SizedBox(height: 20,),
                       Button(
-                        height: 45.0,
-                        width: 200,
+                        height: 50.0,
+                        width: fullWidth(context)/1.2,
                         onclick: (){},
-                        child: Text('Continue'),
+                        child: Text('Continue',style: TextStyle(fontSize: 18),),
                         color: _utilClass.primaryColor,
                       )
                     ],
