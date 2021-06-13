@@ -9,8 +9,6 @@ final UtilClass _utilClass = UtilClass();
 
 //
 // home screen widgets
-
-// custom bar
 Widget customAppBar(BuildContext context){
   return Container(
     padding: const EdgeInsets.only(bottom: 20),
@@ -61,8 +59,6 @@ Widget customAppBar(BuildContext context){
     ),
   );
 }
-
-// banner
 Widget banner(BuildContext context){
   return Container(
     height: 130,
@@ -80,7 +76,6 @@ Widget banner(BuildContext context){
   );
 }
 
-//features widgets
 Widget features(BuildContext context){
   return Container(
     padding: const EdgeInsets.only(top: 25),
@@ -357,7 +352,6 @@ Widget history(BuildContext context){
     ),
   );
 }
-
 Widget historyTile({String date, String thumbnail, String title, String price}){
   return ListTile(
     onTap: (){},
@@ -409,36 +403,104 @@ Widget topUpBtn(BuildContext context){
 
 //
 /// top up widgets
-
 Widget topUpAppBar(){
   return Expanded(
       flex: 1,
       child: Container(
+        padding: const EdgeInsets.all(10.0),
         color: Colors.white,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CircleAvatar(
-              radius: 24,
+              radius: 20,
               backgroundColor: Colors.grey,
               child: CircleAvatar(
-                radius: 23,
+                radius: 19,
                 backgroundColor: Colors.grey[200],
                 child: IconButton(
                   onPressed: (){print('close');},
                   icon: Icon(
                     Icons.clear,
                   ),
-                  iconSize: 25,
+                  iconSize: 20,
                   color: Colors.black,
                 ),
 
               ),
             ),
-            Container(),
-            SizedBox()
+            Container(
+              constraints: BoxConstraints(
+                maxHeight: 48.0,
+                maxWidth: 90.0,
+                minHeight: 39.0,
+                minWidth: 85.0
+              ),
+              decoration: BoxDecoration(
+                color: Colors.grey[200],
+                borderRadius: BorderRadius.circular(25)
+              ),
+              alignment: Alignment.center,
+              child: Text(
+                'Top Up',
+                style: TextStyle(fontWeight: FontWeight.w500,fontSize: 18),
+
+              ),
+            ),
+            SizedBox(width: 50,)
           ],
         ),
+      ));
+}
+
+Widget topUpAmount(BuildContext context){
+  return Expanded(flex: 2,
+      child: Container(
+        alignment: Alignment.center,
+        width: fullWidth(context),
+        color: Colors.white,
+        child: Container(
+          height: 100,
+          alignment: Alignment.center,
+          constraints: BoxConstraints(
+            minWidth: 100.0,
+            maxWidth: 250.0
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              RichText(
+                maxLines: 1,
+                text: TextSpan(children: [
+
+                  TextSpan(
+                      text: r'$ ',
+                      style: TextStyle(
+                          fontSize: 35,
+                          color: Colors.black,
+                          fontWeight: FontWeight.normal)),
+                  TextSpan(
+                      text: '150.00',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 39
+                      )),
+                ]),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Balance: ', style: TextStyle(fontSize: 17,fontWeight: FontWeight.w500),),
+                  Text(r'$ 150.00 ', style: TextStyle(fontSize: 17,fontWeight: FontWeight.w500),)
+
+                ],
+              )
+            ],
+          ),
+        ),
+
       ));
 }
 

@@ -15,11 +15,7 @@ class _TopUpState extends State<TopUp> {
         child: Column(
           children: [
             topUpAppBar(),
-            Expanded(flex: 2,
-              child: Container(
-                color: Colors.black,
-
-              )),
+            topUpAmount(context),
             Expanded(
               flex: 5,
                 child: Container(
