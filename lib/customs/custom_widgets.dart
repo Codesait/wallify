@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wallify/screens/topUpScreen.dart';
 import 'package:wallify/utils/constants.dart';
 import 'package:wallify/utils/extensions.dart';
+import 'package:numeric_keyboard/numeric_keyboard.dart';
 
 import 'button.dart';
 
@@ -453,7 +454,7 @@ Widget topUpAppBar(){
       ));
 }
 
-Widget topUpAmount(BuildContext context){
+Widget topUpAmount(BuildContext context,{String amount}){
   return Expanded(flex: 2,
       child: Container(
         alignment: Alignment.center,
@@ -477,11 +478,11 @@ Widget topUpAmount(BuildContext context){
                   TextSpan(
                       text: r'$ ',
                       style: TextStyle(
-                          fontSize: 35,
+                          fontSize: 30,
                           color: Colors.black,
-                          fontWeight: FontWeight.normal)),
+                          fontWeight: FontWeight.w400)),
                   TextSpan(
-                      text: '150.00',
+                      text: amount.isEmpty ? '0.00': amount + '.00',
                       style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
@@ -493,7 +494,7 @@ Widget topUpAmount(BuildContext context){
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text('Balance: ', style: TextStyle(fontSize: 17,fontWeight: FontWeight.w500),),
-                  Text(r'$ 150.00 ', style: TextStyle(fontSize: 17,fontWeight: FontWeight.w500),)
+                  Text(r'$150.00 ', style: TextStyle(fontSize: 17,fontWeight: FontWeight.w500),)
 
                 ],
               )
@@ -503,5 +504,7 @@ Widget topUpAmount(BuildContext context){
 
       ));
 }
+
+
 
 
