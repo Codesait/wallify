@@ -404,7 +404,7 @@ Widget topUpBtn(BuildContext context){
 
 //
 /// top up widgets
-Widget topUpAppBar(){
+Widget topUpAppBar(BuildContext context){
   return Expanded(
       flex: 1,
       child: Container(
@@ -420,7 +420,9 @@ Widget topUpAppBar(){
                 radius: 19,
                 backgroundColor: Colors.grey[200],
                 child: IconButton(
-                  onPressed: (){print('close');},
+                  onPressed: (){
+                    Navigator.pop(context);
+                  },
                   icon: Icon(
                     Icons.clear,
                   ),
@@ -482,7 +484,7 @@ Widget topUpAmount(BuildContext context,{String amount}){
                           color: Colors.black,
                           fontWeight: FontWeight.w400)),
                   TextSpan(
-                      text: amount.isEmpty ? '0.00': amount + '.00',
+                      text: amount == '' ? '0.00': amount + '.00',
                       style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,

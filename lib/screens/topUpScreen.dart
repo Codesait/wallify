@@ -10,7 +10,7 @@ class TopUp extends StatefulWidget {
 }
 
 class _TopUpState extends State<TopUp> {
-  String _topUpAmount ;
+  String _topUpAmount = '' ;
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +18,12 @@ class _TopUpState extends State<TopUp> {
       body: SafeArea(
         child: Column(
           children: [
-            topUpAppBar(),
+            topUpAppBar(context),
             topUpAmount(context,amount: _topUpAmount),
             Expanded(
-              flex: 5,
+              flex: 4,
                 child: Container(
+                  alignment: Alignment.center,
                   width: fullWidth(context),
                   color: Colors.white,
                   child: topUpKeyPad(),
@@ -35,12 +36,12 @@ class _TopUpState extends State<TopUp> {
 
   Widget topUpKeyPad(){
     return NumericKeyboard(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       onKeyboardTap: (val) => _onKeyTap(val),
       textColor: Colors.black,
       rightIcon: Icon(
         Icons.clear,
-        color: Colors.white,
+        color: Colors.black,
       ),
       rightButtonFn: () => _onClear(),
     );
