@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wallify/customs/button.dart';
 import 'package:wallify/customs/custom_widgets.dart';
 import 'package:numeric_keyboard/numeric_keyboard.dart';
 import 'package:wallify/utils/constants.dart';
@@ -11,6 +12,7 @@ class TopUp extends StatefulWidget {
 
 class _TopUpState extends State<TopUp> {
   String _topUpAmount = '' ;
+  UtilClass _utilClass = UtilClass();
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,19 @@ class _TopUpState extends State<TopUp> {
                   alignment: Alignment.center,
                   width: fullWidth(context),
                   color: Colors.white,
-                  child: topUpKeyPad(),
+                  child: Column(
+                    children: [
+                      topUpKeyPad(),
+                      SizedBox(height: 20,),
+                      Button(
+                        height: 45.0,
+                        width: 200,
+                        onclick: (){},
+                        child: Text('Continue'),
+                        color: _utilClass.primaryColor,
+                      )
+                    ],
+                  ),
                 ))
           ],
         ),

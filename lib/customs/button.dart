@@ -5,7 +5,7 @@ class Button extends StatefulWidget {
   const Button({
     this.height,
     this.width,
-    this.colors,
+    this.color,
     this.onclick,
     this.text,
     this.child
@@ -13,7 +13,7 @@ class Button extends StatefulWidget {
 
   final double height;
   final double width;
-  final Color colors;
+  final Color color;
   final String text;
   final VoidCallback onclick;
   final Widget child;
@@ -33,7 +33,7 @@ class _ButtonState extends State<Button> {
       width: widget.width,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: widget.colors,
+          primary: widget.color,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20.0),
           ),

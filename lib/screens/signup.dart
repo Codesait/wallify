@@ -63,7 +63,7 @@ class _SignUpState extends State<SignUp> {
                     height: 50,
                     width: fullWidth(context),
                     child: Text('Continue'),
-                    colors: Colors.black,
+                    color: Colors.black,
                     onclick: () => Navigator.push(
                         context,
                         MaterialPageRoute(
