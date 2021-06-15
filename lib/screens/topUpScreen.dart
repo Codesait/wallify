@@ -35,7 +35,7 @@ class _TopUpState extends State<TopUp> {
                       Button(
                         height: 50.0,
                         width: fullWidth(context)/1.2,
-                        onclick: (){},
+                        onclick: () => showModal(),
                         child: Text('Continue',style: TextStyle(fontSize: 18),),
                         color: _utilClass.primaryColor,
                       )
@@ -79,5 +79,16 @@ class _TopUpState extends State<TopUp> {
        print(_topUpAmount);
      });
     }
+  }
+
+  void showModal(){
+     showModalBottomSheet(
+        context: context,
+        isScrollControlled: true,
+        builder: (context){
+          return Container(
+            height: fullHeigth(context),
+          );
+        });
   }
 }
