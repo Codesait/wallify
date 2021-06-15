@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:wallify/customs/button.dart';
 import 'package:wallify/customs/custom_widgets.dart';
@@ -11,7 +13,8 @@ class TopUp extends StatefulWidget {
 }
 
 class _TopUpState extends State<TopUp> {
-  String _topUpAmount = '' ;
+  String _topUpAmount = '';
+
   UtilClass _utilClass = UtilClass();
 
   @override
@@ -21,9 +24,9 @@ class _TopUpState extends State<TopUp> {
         child: Column(
           children: [
             topUpAppBar(context),
-            topUpAmount(context,amount: _topUpAmount),
+            topUpAmount(context, amount: _topUpAmount),
             Expanded(
-              flex: 4,
+                flex: 4,
                 child: Container(
                   alignment: Alignment.center,
                   width: fullWidth(context),
@@ -34,9 +37,10 @@ class _TopUpState extends State<TopUp> {
                       SizedBox(height: 20,),
                       Button(
                         height: 50.0,
-                        width: fullWidth(context)/1.2,
+                        width: fullWidth(context) / 1.2,
                         onclick: () => showModal(),
-                        child: Text('Continue',style: TextStyle(fontSize: 18),),
+                        child: Text(
+                          'Continue', style: TextStyle(fontSize: 18),),
                         color: _utilClass.primaryColor,
                       )
                     ],
@@ -48,7 +52,7 @@ class _TopUpState extends State<TopUp> {
     );
   }
 
-  Widget topUpKeyPad(){
+  Widget topUpKeyPad() {
     return NumericKeyboard(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       onKeyboardTap: (val) => _onKeyTap(val),
@@ -73,22 +77,27 @@ class _TopUpState extends State<TopUp> {
   // checking if input is not empty
   void _onClear() async {
     if (_topUpAmount.length > 0) {
-     setState(() {
-       _topUpAmount =
-           _topUpAmount.substring(0, _topUpAmount.length - 1);
-       print(_topUpAmount);
-     });
+      setState(() {
+        _topUpAmount =
+            _topUpAmount.substring(0, _topUpAmount.length - 1);
+        print(_topUpAmount);
+      });
     }
   }
 
-  void showModal(){
-     showModalBottomSheet(
+  void showModal() {
+    showModalBottomSheet(
         context: context,
+        backgroundColor: Colors.transparent,
         isScrollControlled: true,
-        builder: (context){
-          return Container(
-            height: fullHeigth(context),
+        builder: (context) {
+          return BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+              child: Container(
+                color: Colors.transparent,
+              )
           );
         });
   }
+
 }
