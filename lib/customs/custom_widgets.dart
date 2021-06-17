@@ -484,7 +484,7 @@ Widget topUpAmount(BuildContext context,{String amount}){
                           color: Colors.black,
                           fontWeight: FontWeight.w400)),
                   TextSpan(
-                      text: amount == '' ? '0.00': amount + '.00',
+                      text: amount == '' ? '0.00': amount ,
                       style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:wallify/customs/button.dart';
 import 'package:wallify/customs/custom_widgets.dart';
 import 'package:numeric_keyboard/numeric_keyboard.dart';
+import 'package:wallify/screens/payment.dart';
 import 'package:wallify/utils/constants.dart';
 class TopUp extends StatefulWidget {
   const TopUp({Key key}) : super(key: key);
@@ -93,9 +94,7 @@ class _TopUpState extends State<TopUp> {
         builder: (context) {
           return BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
-              child: Container(
-                color: Colors.transparent,
-              )
+              child: Payment(amount: _topUpAmount,)
           );
         });
   }
