@@ -55,7 +55,7 @@ class _TopUpState extends State<TopUp> {
 
   Widget topUpKeyPad() {
     return NumericKeyboard(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       onKeyboardTap: (val) => _onKeyTap(val),
       textColor: Colors.black,
       rightIcon: Icon(
