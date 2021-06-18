@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wallify/utils/constants.dart';
+import 'package:wallify/utils/extensions.dart';
 
 class Payment extends StatefulWidget {
   const Payment({Key key,this.amount}) : super(key: key);
@@ -10,6 +11,8 @@ class Payment extends StatefulWidget {
 }
 
 class _PaymentState extends State<Payment> {
+
+  UtilClass _utilClass = UtilClass();
   @override
   Widget build(BuildContext context) {
     return  Container(
@@ -20,7 +23,7 @@ class _PaymentState extends State<Payment> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(height: 50,),
+              SizedBox(height: 40,),
               _amountArea(amount: widget.amount),
               SizedBox(height: 100,),
               _paymentMethodArea()
@@ -113,6 +116,68 @@ class _PaymentState extends State<Payment> {
           color: Colors.white,
           borderRadius: BorderRadius.circular(12)
       ),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Payment Method',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16
+                  ),
+                ),
+                CircleAvatar(
+                  radius: 20,
+                  backgroundColor: Colors.grey,
+                  child: CircleAvatar(
+                    radius: 19,
+                    backgroundColor: Colors.grey[200],
+                    child: IconButton(
+                      onPressed: (){
+                        Navigator.pop(context);
+                      },
+                      icon: Icon(
+                        Icons.clear,
+                      ),
+                      iconSize: 20,
+                      color: Colors.black,
+                    ),
+
+                  ),
+                ),
+              ],
+            ),
+          ),
+          ListView(
+            shrinkWrap: true,
+            children: _utilClass.paymentMethod.map((e) => tile(
+              thumbnail: e['thumbnail'],
+              title: e['title']
+            )
+            ).toList(),
+          ),
+        ],
+      ),
     );
   }
+
+  Widget tile({String date, String thumbnail, String title, String price}){
+    return ListTile(
+      onTap: (){
+        print('kk');
+      },
+      leading: Image.asset(
+        thumbnail.png,
+        height: 25,
+        width: 25,
+      ),
+      title: Text(title,style: TextStyle(fontSize: 14),),
+      trailing: Icon(Icons.keyboard_arrow_right),
+    );
+  }
+
 }

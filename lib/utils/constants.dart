@@ -116,5 +116,24 @@ class UtilClass {
 
  ];
 
+ List<Map> paymentMethod = [
+   {
+     "thumbnail":"transfer",
+     "title": "Bank Transfer",
+   },
+   {
+     "thumbnail":"gpay",
+     "title": "Google Pay",
+   },
+   {
+     "thumbnail":"stripe",
+     "title": "Stripe",
+   },
+   {
+     "thumbnail":"bitcoin",
+     "title": "Bitcoin",
+   }
+ ];
+
 
 }

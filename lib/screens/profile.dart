@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wallify/customs/appBar.dart';
 import 'package:wallify/customs/custom_widgets.dart';
-import 'package:wallify/utils/constants.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key key,this.title}) : super(key: key);
