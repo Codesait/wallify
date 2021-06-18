@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:wallify/customs/button.dart';
 import 'package:wallify/customs/custom_widgets.dart';
 import 'package:numeric_keyboard/numeric_keyboard.dart';
@@ -15,6 +16,10 @@ class TopUp extends StatefulWidget {
 
 class _TopUpState extends State<TopUp> {
   String _topUpAmount = '';
+  int _amount;
+  String _formatAmount = '0';
+  final formatter = NumberFormat("#,###");
+  final hundredsFormat = NumberFormat("###");
 
   UtilClass _utilClass = UtilClass();
 
@@ -25,7 +30,7 @@ class _TopUpState extends State<TopUp> {
         child: Column(
           children: [
             topUpAppBar(context),
-            topUpAmount(context, amount: _topUpAmount),
+            topUpAmount(context, amount: _formatAmount),
             Expanded(
                 flex: 4,
                 child: Container(
@@ -70,19 +75,34 @@ class _TopUpState extends State<TopUp> {
   void _onKeyTap(String val) async {
     setState(() {
       _topUpAmount = _topUpAmount + val;
+      _amount = int.parse(_topUpAmount);
+      _formatAmount = formatter.format(_amount);
     });
-    print("input: " + _topUpAmount);
+    print("input: " + _amount.toString());
+    print("length: " +_formatAmount.length.toString());
+
   }
 
   // on clear button tapped
   // checking if input is not empty
   void _onClear() async {
-    if (_topUpAmount.length > 0) {
+    if (_formatAmount.length > 0) {
       setState(() {
-        _topUpAmount =
-            _topUpAmount.substring(0, _topUpAmount.length - 1);
+        if( _formatAmount.length == 3){
+          _topUpAmount = hundredsFormat.format(_amount);
+        }
+
+        _topUpAmount = _topUpAmount.substring(0, _topUpAmount.length - 1);
+        _amount = int.parse(_topUpAmount);
+        _formatAmount = formatter.format(_amount);
         print(_topUpAmount);
+        print("length: " +_formatAmount.length.toString());
       });
+    } else if(_formatAmount.length <= 1) {
+      setState(() {
+      // _topUpAmount  = "0";
+      _amount = 0;
+    });
     }
   }
 

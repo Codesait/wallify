@@ -32,6 +32,7 @@ dependencies:
   country_code_picker: ^2.0.1
   pin_code_fields: ^7.1.0
   pinput: ^1.2.0
+  intl: ^0.17.0
 
 
 

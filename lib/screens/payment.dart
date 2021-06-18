@@ -24,7 +24,7 @@ class _PaymentState extends State<Payment> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(height: 40,),
-              _amountArea(amount: widget.amount),
+              _amountArea(amount: widget.amount.toString()),
               SizedBox(height: 100,),
               _paymentMethodArea()
             ],
