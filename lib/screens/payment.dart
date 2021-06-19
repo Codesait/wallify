@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:wallify/utils/constants.dart';
 import 'package:wallify/utils/extensions.dart';
 
@@ -13,6 +14,15 @@ class Payment extends StatefulWidget {
 class _PaymentState extends State<Payment> {
 
   UtilClass _utilClass = UtilClass();
+  final formatter = NumberFormat("#,###");
+  int _amount;
+
+  @override
+  void initState() {
+    _amount = int.parse(widget.amount);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return  Container(
@@ -24,7 +34,7 @@ class _PaymentState extends State<Payment> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(height: 40,),
-              _amountArea(amount: widget.amount.toString()),
+              _amountArea(amount: formatter.format(_amount)),
               SizedBox(height: 100,),
               _paymentMethodArea()
             ],
