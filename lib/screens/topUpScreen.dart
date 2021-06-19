@@ -86,7 +86,7 @@ class _TopUpState extends State<TopUp> {
   // on clear button tapped
   // checking if input is not empty
   void _onClear() async {
-    if (_formatAmount.length > 0) {
+    if (_formatAmount.length > 1) {
       setState(() {
         if( _formatAmount.length == 3){
           _topUpAmount = hundredsFormat.format(_amount);
@@ -98,10 +98,11 @@ class _TopUpState extends State<TopUp> {
         print(_topUpAmount);
         print("length: " +_formatAmount.length.toString());
       });
-    } else if(_formatAmount.length <= 1) {
+    } else if(_formatAmount.length == 1) {
       setState(() {
-      // _topUpAmount  = "0";
-      _amount = 0;
+       _topUpAmount  = "0";
+      _amount = int.parse(_topUpAmount);
+      _formatAmount = formatter.format(_amount);
     });
     }
   }
