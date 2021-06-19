@@ -136,4 +136,44 @@ class UtilClass {
  ];
 
 
+  List<Map> moreFeatures = [
+    {
+      "title": "Buy",
+      "icon": Icons.store_rounded,
+      "backgroundColor": 0xFF388E3C,
+      "route": "/topUp"
+    },
+    {
+      "title": "Sell",
+      "icon": Icons.sentiment_satisfied_sharp,
+      "backgroundColor": 0xFFf03743,
+      "route": "/topUp"
+    },
+    {
+      "title": "Deposit",
+      "icon": Icons.account_balance_wallet_outlined,
+      "backgroundColor": 0xFF771BE5,
+      "route": "/topUp"
+    },
+    {
+      "title": "Withdraw",
+      "icon": Icons.money,
+      "backgroundColor": 0xFFe0c02f,
+      "route": "/topUp"
+    },
+    {
+      "title": "Send",
+      "icon": Icons.call_made,
+      "backgroundColor": 0xFF2196F3,
+      "route": "/topUp"
+    },
+    {
+      "title": "Request",
+      "icon": Icons.call_received,
+      "backgroundColor": 0xFFE7259B,
+      "route": "/topUp"
+    },
+
+  ];
 }
+
