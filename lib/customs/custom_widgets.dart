@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:wallify/screens/more.dart';
 import 'package:wallify/screens/topUpScreen.dart';
 import 'package:wallify/utils/constants.dart';
 import 'package:wallify/utils/extensions.dart';
@@ -78,6 +81,7 @@ Widget banner(BuildContext context){
 }
 
 Widget features(BuildContext context){
+  final modalClass = Modal(context: context);
   return Container(
     padding: const EdgeInsets.only(top: 25),
     width: fullWidth(context),
@@ -104,16 +108,24 @@ Widget features(BuildContext context){
                   title: _utilClass.featureData[index]["title"],
                   imageIcon: _utilClass.featureData[index]["icon"],
                   color: _utilClass.featureData[index]["backgroundColor"],
-                  routName: _utilClass.featureData[index]["route"]
+                  routName: _utilClass.featureData[index]["route"],
+                onTap: (){
+                    print(index);
+                    if(index == 7){
+                      modalClass.showModal();
+                    }
+                }
               );
             })
       ],
     ),
   );
 }
-Widget _featureWidget({String title, String imageIcon, int color, String routName}){
+
+
+Widget _featureWidget({String title, String imageIcon, int color, String routName, VoidCallback onTap}){
   return InkWell(
-    onTap: (){},
+    onTap: onTap,
     borderRadius: BorderRadius.circular(16),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -134,6 +146,25 @@ Widget _featureWidget({String title, String imageIcon, int color, String routNam
       ],
     ),
   );
+}
+
+class Modal {
+  BuildContext context;
+
+  Modal({ @required this.context});
+
+  void showModal() {
+    showModalBottomSheet(
+        context: context,
+        backgroundColor: Colors.transparent,
+        isScrollControlled: false,
+        builder: (context) {
+          return BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+            child: More(),
+          );
+        });
+  }
 }
 
 //
