@@ -28,7 +28,7 @@ class More extends StatelessWidget {
                   children: [
                     _grid(),
                     Container(
-                      height: 50,
+                      height: 53,
                       padding: const EdgeInsets.all(5),
                       margin: const EdgeInsets.only(top: 10),
                       decoration: BoxDecoration(
@@ -46,7 +46,7 @@ class More extends StatelessWidget {
                             child: Icon(Icons.call_split_rounded,color: Colors.white,),
                           ),
                           SizedBox(width: 6.0,),
-                          Text("Convert", style: TextStyle(color: Colors.black,fontSize: 17,fontWeight: FontWeight.w400),)
+                          Text("Convert", style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.w500),)
                         ],
                       ),
                     )
@@ -133,7 +133,7 @@ class More extends StatelessWidget {
             child: Icon(icon,color: Colors.white,),
           ),
           SizedBox(width: 6.0,),
-          Text(title, style: TextStyle(color: Colors.black,fontSize: 17,fontWeight: FontWeight.w400),)
+          Text(title, style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.w500),)
         ],
       ),
     );
