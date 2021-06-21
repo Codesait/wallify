@@ -34,7 +34,7 @@ Widget customAppBar(BuildContext context){
             Text(
               'John Wick',
               style: TextStyle(
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w400,
                   color: Colors.grey,
                   fontSize: 16
               ),
@@ -43,13 +43,17 @@ Widget customAppBar(BuildContext context){
         ),
 
         Container(
+          padding: const EdgeInsets.all(8),
           height: 30,
           width: 30,
           child: Stack(
+            fit: StackFit.loose,
               children:[
-                CircleAvatar(
-                  radius: 5,
-                  backgroundColor: Colors.red,
+                Expanded(
+                  child: CircleAvatar(
+                    radius: 5,
+                    backgroundColor: Colors.red,
+                  ),
                 ),
                 IconButton(
                     icon: Icon(Icons.notifications),
@@ -142,7 +146,7 @@ Widget _featureWidget({String title, String imageIcon, int color, String routNam
           child: Image.asset(imageIcon + '.png',height: 20,width: 20,),
         ),
 
-        Text(title,textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.w500),)
+        Text(title,textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.w700,fontSize: 13),)
       ],
     ),
   );
@@ -161,7 +165,7 @@ class Modal {
         builder: (context) {
           return BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
-            child: More(),
+            child: MoreWidget(),
           );
         });
   }

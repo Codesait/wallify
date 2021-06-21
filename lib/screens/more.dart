@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:wallify/utils/constants.dart';
 
-class More extends StatelessWidget {
-   More({Key key}) : super(key: key);
+class MoreWidget extends StatelessWidget {
+   MoreWidget({Key key}) : super(key: key);
 
   final _utilClass = UtilClass();
 
@@ -46,7 +46,7 @@ class More extends StatelessWidget {
                             child: Icon(Icons.call_split_rounded,color: Colors.white,),
                           ),
                           SizedBox(width: 6.0,),
-                          Text("Convert", style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.w500),)
+                          Text("Convert", style: TextStyle(color: Colors.black,fontSize: 14,fontWeight: FontWeight.w500),)
                         ],
                       ),
                     )
@@ -133,7 +133,7 @@ class More extends StatelessWidget {
             child: Icon(icon,color: Colors.white,),
           ),
           SizedBox(width: 6.0,),
-          Text(title, style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.w500),)
+          Text(title, style: TextStyle(color: Colors.black,fontSize: 14,fontWeight: FontWeight.w500),)
         ],
       ),
     );
