@@ -43,7 +43,7 @@ Widget customAppBar(BuildContext context){
         ),
 
         Container(
-          padding: const EdgeInsets.all(8),
+          padding: const EdgeInsets.all(5),
           height: 30,
           width: 30,
           child: Stack(
