@@ -43,17 +43,14 @@ Widget customAppBar(BuildContext context){
         ),
 
         Container(
-          padding: const EdgeInsets.all(5),
           height: 30,
           width: 30,
           child: Stack(
             fit: StackFit.loose,
               children:[
-                Expanded(
-                  child: CircleAvatar(
-                    radius: 5,
-                    backgroundColor: Colors.red,
-                  ),
+                CircleAvatar(
+                  radius: 5,
+                  backgroundColor: Colors.red,
                 ),
                 IconButton(
                     icon: Icon(Icons.notifications),
