@@ -1,6 +1,6 @@
 # wallify
 
-A new Flutter project.
+A  wallet app ui.
 
 ## Getting Started
 
