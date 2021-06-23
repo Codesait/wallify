@@ -49,7 +49,7 @@ Widget customAppBar(BuildContext context){
             fit: StackFit.loose,
               children:[
                 CircleAvatar(
-                  radius: 5,
+                  radius: 4,
                   backgroundColor: Colors.red,
                 ),
                 IconButton(
