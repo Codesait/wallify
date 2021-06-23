@@ -2,6 +2,15 @@
 
 A  wallet app ui.
 
+Exploring modals
+
+![image](https://user-images.githubusercontent.com/37216036/123104354-c7c39580-d42e-11eb-8d86-7b7933be4200.png)
+
+![image](https://user-images.githubusercontent.com/37216036/123101949-731f1b00-d42c-11eb-8953-3cbf2fa74646.png)
+
+![image](https://user-images.githubusercontent.com/37216036/123104492-e6c22780-d42e-11eb-8e3c-8971b57a9957.png)
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
